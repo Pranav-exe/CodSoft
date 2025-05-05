@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #14B8A6;
+  --primary-dark: #0D9488;
+  --primary-light: #5EEAD4;
+  --dark-bg: #121212;
+  --dark-surface: #1E1E1E;
+  --dark-surface-2: #2D2D2D;
+  --dark-text: #F2F2F2;
+  --dark-text-secondary: #A1A1AA;
+  --dark-border: #333333;
+}
+
+body {
+  @apply bg-dark-bg text-dark-text;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white py-2 px-4 rounded-lg transition-all duration-200 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-dark-surface-2 hover:bg-dark-surface text-dark-text py-2 px-4 rounded-lg border border-dark-border transition-all duration-200 font-medium;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary/10 py-2 px-4 rounded-lg transition-all duration-200 font-medium;
+  }
+  
+  .card {
+    @apply bg-dark-surface rounded-xl shadow-md p-4 border border-dark-border;
+  }
+  
+  .input {
+    @apply bg-dark-surface-2 border border-dark-border rounded-lg px-4 py-2 text-dark-text w-full focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200;
+  }
+  
+  .label {
+    @apply block text-dark-text-secondary mb-1 text-sm font-medium;
+  }
+}
